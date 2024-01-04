@@ -19,13 +19,14 @@ class Picture {
 
   static fromJson(Map<String, dynamic> data) {
     return Picture(
-        url: data['url'] as String,
-        headers: data['headers']?.map<String, String>((k, v) => MapEntry(k as String, v as String))
-            as Map<String, String>?,
-        width: data['width'] as int?,
-        height: data['height'] as int?,
-        size: data['size'] as String?,
-        tags: data['tags'] as List<String>?);
+      url: data['url'] as String,
+      headers: data['headers']?.map<String, String>((k, v) => MapEntry(k as String, v as String))
+          as Map<String, String>?,
+      width: data['width'] as int?,
+      height: data['height'] as int?,
+      size: data['size'] as String?,
+      tags: data['tags']?.map<String>((e) => e.toString()).toList() as List<String>?,
+    );
   }
 
   toJson() {
@@ -78,7 +79,7 @@ class Album {
       coverHeaders:
           data['coverHeaders']?.map<String, String>((k, v) => MapEntry(k as String, v as String))
               as Map<String, String>?,
-      tags: data['tags'] as List<String>?,
+      tags: data['tags']?.map<String>((e) => e.toString()).toList() as List<String>?,
       title: data['title'] as String?,
       description: data['description'] as String?,
       creator: data['creator'] as String?,

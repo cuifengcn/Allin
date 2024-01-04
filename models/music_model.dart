@@ -35,14 +35,14 @@ class Music {
       quality: data['quality'] as List<String>?,
       coverUrl: data['coverUrl'] as String?,
       coverHeaders:
-          data['coverHeaders']?.map<String, String>((k, v) => MapEntry(k as String, v as String))
-              as Map<String, String>?,
+      data['coverHeaders']?.map<String, String>((k, v) => MapEntry(k as String, v as String))
+      as Map<String, String>?,
       photoUrl: data['photoUrl'] as String?,
       photoHeaders:
-          data['photoHeaders']?.map<String, String>((k, v) => MapEntry(k as String, v as String))
-              as Map<String, String>?,
+      data['photoHeaders']?.map<String, String>((k, v) => MapEntry(k as String, v as String))
+      as Map<String, String>?,
       extra: data['extra']?.map<String, dynamic>((k, v) => MapEntry(k as String, v as dynamic))
-          as Map<String, dynamic>?,
+      as Map<String, dynamic>?,
     );
   }
 
@@ -92,14 +92,14 @@ class Playlist {
       name: data['name'] as String,
       coverUrl: data['coverUrl'] as String?,
       coverHeaders:
-          data['coverHeaders']?.map<String, String>((k, v) => MapEntry(k as String, v as String))
-              as Map<String, String>?,
+      data['coverHeaders']?.map<String, String>((k, v) => MapEntry(k as String, v as String))
+      as Map<String, String>?,
       creator: data['creator'] as String?,
       createAt: data['createAt'] as String?,
       introduce: data['introduce'] as String?,
       numMusics: data['numMusics'] as int?,
       extra: data['extra']?.map<String, String>((k, v) => MapEntry(k as String, v as String))
-          as Map<String, String>?,
+      as Map<String, String>?,
     );
   }
 
@@ -149,8 +149,8 @@ class Comment {
       createTime: data['createTime'] as String?,
       photoUrl: data['photoUrl'] as String?,
       photoHeaders:
-          data['photoHeaders']?.map<String, String>((k, v) => MapEntry(k as String, v as String))
-              as Map<String, String>?,
+      data['photoHeaders']?.map<String, String>((k, v) => MapEntry(k as String, v as String))
+      as Map<String, String>?,
       thumbUp: data['thumbUp'] as int?,
       replies: (data['replies'] ?? []).map<Comment>((c) => Comment.fromJson(c)).toList(),
     );
@@ -251,6 +251,32 @@ class ResultPlaylists {
       'playlists': playlists.map((e) => e.toJson()).toList(),
       'currPage': currPage,
       'totalPage': totalPage,
+    };
+  }
+}
+
+///音乐的播放地址
+class ResultMusicUrl {
+  final String? url;
+  final Map<String, String>? headers;
+
+  ResultMusicUrl({
+    this.url,
+    this.headers,
+  });
+
+  static fromJson(Map<String, dynamic> data) {
+    return ResultMusicUrl(
+      url: data['url'] as String?,
+      headers: data['headers']?.map<String, String>((k, v) => MapEntry(k as String, v as String))
+      as Map<String, String>?,
+    );
+  }
+
+  toJson() {
+    return {
+      'url': url,
+      'headers': headers,
     };
   }
 }

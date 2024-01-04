@@ -1,2 +1,2 @@
-# allin-browser
-Allin浏览器
+# Allin
+Allin

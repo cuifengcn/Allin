@@ -42,7 +42,7 @@ class Novel {
               as Map<String, String>?,
       size: data['size'] as String?,
       latestUpdate: data['latestUpdate'] == null ? null : DateTime.tryParse(data['latestUpdate']),
-      tags: data['tags'] as List<String>?,
+      tags: data['tags']?.map<String>((e) => e.toString()).toList() as List<String>?,
       introduce: data['introduce'] as String?,
       readingChapterId: data['readingChapterId'] as String?,
       readingDatetime:
@@ -90,7 +90,7 @@ class ResultNovels {
 
   toJson() {
     return {
-      'novel': novels.map((e) => e.toJson()).toList(),
+      'novels': novels.map((e) => e.toJson()).toList(),
       'currPage': currPage,
       'totalPage': totalPage,
     };
@@ -156,11 +156,11 @@ class ResultChapters {
     return ResultChapters(
       chapters:
           (data['chapters'] as List).map<NovelChapter>((e) => NovelChapter.fromJson(e)).toList(),
-      introduce: data['introduce'] as String,
-      author: data['author'] as String,
+      introduce: data['introduce'] as String?,
+      author: data['author'] as String?,
       latestUpdate: data['latestUpdate'] == null ? null : DateTime.tryParse(data['latestUpdate']),
       //最近更新时间
-      tags: data['tags'] as List<String>?,
+      tags: data['tags']?.map<String>((e) => e.toString()).toList() as List<String>?,
       // 标签
       size: data['size'] as String?,
       //大小或字数
