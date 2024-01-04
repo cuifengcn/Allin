@@ -13,6 +13,18 @@ Allin是一款非常灵活的软件，支流浏览图片、音乐、小说、影
 
 ---
 
+
+![](https://files.mdnice.com/user/38310/5e1f63ab-d625-4077-bb7d-327d521d900c.png)
+
+
+![](https://files.mdnice.com/user/38310/21839605-c545-477c-91ed-b6a9d17d7d84.png)
+
+
+![](https://files.mdnice.com/user/38310/41a479c4-5a1a-4ae1-9164-8a3db49cd8df.png)
+
+
+---
+
 如果你想学习如何制作源
 
 请点击 [实例教程：制作一个图片源](https://github.com/cuifengcn/allin-browser/wiki/%E5%AE%9E%E4%BE%8B%E6%95%99%E7%A8%8B%EF%BC%9A%E5%88%B6%E4%BD%9C%E4%B8%80%E4%B8%AA%E5%9B%BE%E7%89%87%E6%BA%90)
